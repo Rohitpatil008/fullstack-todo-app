@@ -1,0 +1,173 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f5f2;
+  --card: #ffffff;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --line: #e6e4df;
+  --accent: #1f4f46;
+  --danger: #9b3a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  width: min(640px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.count {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  background: var(--card);
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+
+.form input,
+.edit-form input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 10px 8px;
+  color: var(--text);
+}
+
+button {
+  border: 0;
+  background: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 8px;
+}
+
+.ghost:hover {
+  color: var(--text);
+}
+
+.danger:hover {
+  color: var(--danger);
+}
+
+.list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.title {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  cursor: default;
+}
+
+.done .title {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.edit-form {
+  display: flex;
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+}
+
+.error {
+  margin: 12px 0 0;
+  color: var(--danger);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.muted {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
